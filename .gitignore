@@ -6,7 +6,7 @@ frontend/dist
 backend/venv
 backend/__pycache__
 backend/*.pyc
-backend/data/*
+# backend/data/*
 
 # Misc
 .DS_Store
