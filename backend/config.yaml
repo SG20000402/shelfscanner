@@ -1,0 +1,3 @@
+# Optional config (empty for now)
+google_books_api: https://www.googleapis.com/books/v1/volumes
+model_name: all-MiniLM-L6-v2

@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+easyocr
+requests
+sentence-transformers
+numpy
+scipy
+pydantic
+python-multipart  # For form data
+torch  # For sentence-transformers and easyocr
