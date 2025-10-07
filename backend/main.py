@@ -21,17 +21,19 @@ app.add_middleware(
 async def scan_shelf(image: UploadFile = UploadFile(...), preferences: str = Form(...)):
     # Save image
     image_path = save_file(image, 'data/shelf_images')
-    
-    # Phase 1: OCR
+    print("[HELLO]".center(100, "@"))
+    # print(preferences)
+    # Phase 1: GOOGLE CLOUD VISION
     titles = extract_titles(image_path)
     
-    # Phase 2: Metadata and Embeddings
+    # # Phase 2: Metadata and Embeddings
     books = [fetch_metadata(title) for title in titles if title]
-    print
-    preference_embedding = generate_embedding(preferences)
-    book_embeddings = [generate_embedding(book.get('description', '')) for book in books if book]
+    print("[CENTER]".center(100, "-"))
+    print(books)
+    # preference_embedding = generate_embedding(preferences)
+    # book_embeddings = [generate_embedding(book.get('description', '')) for book in books if book]
     
-    # Phase 2: Similarity Scoring
-    recommendations = recommend_books(books, preference_embedding, book_embeddings)
+    # # Phase 2: Similarity Scoring
+    # recommendations = recommend_books(books, preference_embedding, book_embeddings)
     
-    return {"recommendations": recommendations}
+    # return {"recommendations": recommendations}

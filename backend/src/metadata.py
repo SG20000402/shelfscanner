@@ -16,3 +16,6 @@ def fetch_metadata(title):
                 'language': volume.get('language', 'en')
             }
     return None
+
+if __name__=="__main__":
+    fetch_metadata()
